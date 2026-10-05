@@ -1,0 +1,10 @@
+{
+  "monlisc_startup": {
+    "sounds": [
+      {
+        "name": "ntranslator:monlisc_startup",
+        "stream": true
+      }
+    ]
+  }
+}

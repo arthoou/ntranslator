@@ -1,0 +1,17 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "com.arthou.ntranslator.mixin",
+    "refmap": "ntranslator.refmap.json",
+    "compatibilityLevel": "JAVA_17",
+    "mixins": [],
+    "client": [
+        "AbstractWidgetAccessor",
+        "BookViewScreenAccessor",
+        "BookEditScreenAccessor",
+        "AbstractWidgetMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
+}

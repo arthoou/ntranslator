@@ -1,0 +1,262 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'idea'
+    id 'org.jetbrains.kotlin.jvm' version "${kotlin_version}"
+    id 'com.gradleup.shadow' version '8.3.6'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+
+version = project.mod_version
+group = project.mod_group_id
+
+base {
+    archivesName = project.archives_base_name
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(project.java_version as int)
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'Architectury'
+        url = 'https://maven.architectury.dev/'
+    }
+    maven {
+        name = 'NeoForged Releases'
+        url = 'https://maven.neoforged.net/releases/'
+    }
+    maven {
+        name = 'MaxHenkel'
+        url = 'https://maven.maxhenkel.de/repository/public'
+    }
+    maven {
+        name = 'Plo'
+        url = 'https://repo.plo.su'
+    }
+    maven {
+        name = 'Plasmoverse Releases'
+        url = 'https://repo.plasmoverse.com/releases'
+    }
+    maven {
+        name = 'Plasmoverse Snapshots'
+        url = 'https://repo.plasmoverse.com/snapshots'
+    }
+    maven {
+        name = 'Clojars'
+        url = 'https://repo.clojars.org'
+    }
+}
+
+configurations {
+    shade
+    implementation.extendsFrom(shade)
+    runtimeClasspath.extendsFrom localRuntime
+}
+
+neoForge {
+    version = project.neo_version
+
+    parchment {
+        mappingsVersion = project.parchment_mappings_version
+        minecraftVersion = project.parchment_minecraft_version
+    }
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+dependencies {
+    implementation "dev.architectury:architectury-neoforge:${project.architectury_version}"
+    compileOnly "de.maxhenkel.voicechat:voicechat-api:${project.voicechat_api_version}"
+    compileOnly "su.plo.voice.api:server:${project.plasmo_api_version}"
+    compileOnly "su.plo.voice.api:client:${project.plasmo_api_version}"
+    shade "org.jetbrains.kotlin:kotlin-stdlib:${project.kotlin_version}"
+
+    implementation "commons-logging:commons-logging:${project.commons_logging_version}"
+    implementation "org.apache.httpcomponents:httpcore:${project.apache_httpcore_version}"
+    implementation("org.apache.httpcomponents:httpclient:${project.apache_httpclient_version}") {
+        exclude group: 'commons-codec', module: 'commons-codec'
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+
+    shade("org.java-websocket:Java-WebSocket:${project.java_websocket_version}") {
+        exclude group: 'org.slf4j', module: 'slf4j-api'
+    }
+
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit5:${project.kotlin_version}"
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    def replaceProperties = [
+        minecraft_version      : minecraft_version,
+        minecraft_version_range: minecraft_version_range,
+        neo_version            : neo_version,
+        loader_version_range   : loader_version_range,
+        mod_id                 : mod_id,
+        mod_name               : mod_name,
+        mod_license            : mod_license,
+        mod_version            : mod_version,
+        mod_authors            : mod_authors,
+        mod_description        : mod_description,
+        architectury_version   : architectury_version
+    ]
+
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = Integer.parseInt(project.java_version)
+}
+
+tasks.named('test', Test).configure {
+    useJUnitPlatform()
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = project.java_version
+    }
+}
+
+java {
+    withSourcesJar()
+}
+
+jar {
+    archiveVersion = project.display_version.toString().replace(' ', '-')
+    archiveClassifier = 'dev-slim'
+}
+
+tasks.named('sourcesJar').configure {
+    archiveVersion = project.display_version.toString().replace(' ', '-')
+}
+
+shadowJar {
+    archiveVersion = project.display_version.toString().replace(' ', '-')
+    archiveClassifier = ''
+    configurations = [project.configurations.shade]
+    relocate 'kotlin', 'com.arthou.ntranslator.shadow.kotlin'
+    exclude 'module-info.class'
+    exclude 'META-INF/versions/**'
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    exclude 'org/slf4j/**'
+    exclude 'META-INF/maven/org.slf4j/**'
+}
+
+tasks.build.dependsOn(tasks.shadowJar)
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            from components.java
+            artifact tasks.shadowJar
+        }
+    }
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
+
+// NTRANSLATOR_GUI_ONLY_SLIM_START
+def ntranslatorGuiOnlyExcludedSources = [
+    'com/arthou/ntranslator/client/NTranslatorClient.kt',
+    'com/arthou/ntranslator/client/bubbles/**',
+    'com/arthou/ntranslator/client/transcribers/**',
+    'com/arthou/ntranslator/client/gui/EditTranscriptBoxesScreen.kt',
+    'com/arthou/ntranslator/client/gui/MonliscStartupScreen.kt',
+    'com/arthou/ntranslator/client/gui/OpenBrowserScreen.kt',
+    'com/arthou/ntranslator/client/gui/RequestDownloadScreen.kt',
+    'com/arthou/ntranslator/client/gui/SpeechBubbleCustomizationScreen.kt',
+    'com/arthou/ntranslator/client/gui/TranscriptBox.kt',
+    'com/arthou/ntranslator/client/gui/UTConfigScreen.kt',
+    'com/arthou/ntranslator/commands/**',
+    'com/arthou/ntranslator/compat/**',
+    'com/arthou/ntranslator/events/**',
+    'com/arthou/ntranslator/mixin/PlayerRendererMixin.java',
+    'com/arthou/ntranslator/fsb/**',
+    'com/arthou/ntranslator/network/**',
+    'com/arthou/ntranslator/transcribers/**',
+    'com/arthou/ntranslator/transcript/**',
+    'com/arthou/ntranslator/translator/LibreTranslateInstance.kt',
+    'com/arthou/ntranslator/translator/LocalLibreTranslateInstance.kt',
+    'com/arthou/ntranslator/translator/Translation.kt',
+    'com/arthou/ntranslator/translator/TranslatorManager.kt'
+]
+
+if (project.projectDir.absolutePath.replace('\\', '/').contains('/fabric/')) {
+    ntranslatorGuiOnlyExcludedSources += [
+        'com/arthou/ntranslator/forge/**'
+    ]
+}
+
+def ntranslatorGuiOnlyExcludedResources = [
+    'assets/ntranslator/font/**',
+    'assets/ntranslator/textures/font/**',
+    'assets/ntranslator/textures/gui/monlisc_startup/**',
+    'assets/ntranslator/textures/gui/speech_bubbles/**',
+    'assets/ntranslator/textures/gui/sprites/**',
+    'assets/ntranslator/textures/gui/transcriber/**',
+    'assets/ntranslator/sounds/**',
+    'assets/ntranslator/sounds.json',
+    'native/**',
+    'website/**',
+    'FSB/**',
+    'data/**'
+]
+
+def ntranslatorGuiOnlyExcludedJarEntries = ntranslatorGuiOnlyExcludedResources + [
+    'org/java_websocket/**',
+    'META-INF/maven/org.java-websocket/**'
+]
+
+tasks.withType(JavaCompile).configureEach {
+    ntranslatorGuiOnlyExcludedSources.each { exclude it }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    ntranslatorGuiOnlyExcludedSources.each { exclude it }
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    ntranslatorGuiOnlyExcludedResources.each { exclude it }
+}
+
+tasks.withType(Jar).configureEach {
+    ntranslatorGuiOnlyExcludedJarEntries.each { exclude it }
+}
+// NTRANSLATOR_GUI_ONLY_SLIM_END

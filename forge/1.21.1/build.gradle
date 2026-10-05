@@ -1,0 +1,164 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'org.jetbrains.kotlin.jvm' version "${kotlin_version}"
+    // O shadow do johnrengelman usa um ASM antigo que nao le bytecode Java 21,
+    // e a relocalizacao do Kotlin precisa ler todas as classes do mod.
+    id 'com.gradleup.shadow' version '8.3.6'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+    id 'org.spongepowered.mixin' version '0.7.+' apply false
+    id 'maven-publish'
+}
+
+apply plugin: 'org.spongepowered.mixin'
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(project.java_version as int)
+
+minecraft {
+    mappings channel: mapping_channel, version: mapping_version
+    copyIdeResources = true
+
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                "${mod_id}" {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        client {
+            property 'forge.enabledGameTestNamespaces', mod_id
+        }
+
+        server {
+            property 'forge.enabledGameTestNamespaces', mod_id
+            args '--nogui'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'MinecraftForge'
+        url = 'https://maven.minecraftforge.net/'
+    }
+}
+
+configurations {
+    shade
+    implementation.extendsFrom(shade)
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
+
+    compileOnly "org.jetbrains.kotlin:kotlin-reflect:${project.kotlin_version}"
+
+    // O Forge nao fornece a stdlib do Kotlin (ao contrario do KotlinForForge, que nem
+    // todo mundo instala). Sem empacotar aqui o mod morre com NoClassDefFoundError
+    // em kotlin/jvm/internal/Intrinsics logo na construcao do mod.
+    shade "org.jetbrains.kotlin:kotlin-stdlib:${project.kotlin_version}"
+
+    // O Minecraft ja fornece o Apache HttpClient. Empacotar de novo criava um
+    // split package no module layer do Forge e a JVM morria no boot, antes de
+    // qualquer log. O NeoForge sempre usou o do jogo e funciona.
+    compileOnly "commons-logging:commons-logging:${project.commons_logging_version}"
+    compileOnly "org.apache.httpcomponents:httpcore:${project.apache_httpcore_version}"
+    compileOnly "org.apache.httpcomponents:httpclient:${project.apache_httpclient_version}"
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+mixin {
+    add sourceSets.main, "ntranslator.refmap.json"
+    config "ntranslator.mixins.json"
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    def replaceProperties = [
+        minecraft_version      : minecraft_version,
+        minecraft_version_range: minecraft_version_range,
+        forge_version          : forge_version,
+        forge_version_range    : forge_version_range,
+        loader_version_range   : loader_version_range,
+        mod_id                 : mod_id,
+        mod_name               : mod_name,
+        mod_license            : mod_license,
+        mod_version            : mod_version,
+        mod_authors            : mod_authors,
+        mod_description        : mod_description
+    ]
+
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/mods.toml', 'pack.mcmeta']) {
+        expand replaceProperties + [project: project]
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = Integer.parseInt(project.java_version)
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = project.java_version
+    }
+}
+
+java {
+    withSourcesJar()
+}
+
+jar {
+    archiveVersion = project.display_version.toString().replace(' ', '-')
+    archiveClassifier = 'dev-slim'
+}
+
+tasks.named('sourcesJar').configure {
+    archiveVersion = project.display_version.toString().replace(' ', '-')
+}
+
+shadowJar {
+    archiveVersion = project.display_version.toString().replace(' ', '-')
+    archiveClassifier = ''
+    configurations = [project.configurations.shade]
+    relocate 'kotlin', 'com.arthou.ntranslator.shadow.kotlin'
+    exclude 'module-info.class'
+    exclude 'META-INF/versions/**'
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    exclude 'org/slf4j/**'
+    exclude 'META-INF/maven/org.slf4j/**'
+    // Explicito: sem isto o shadowJar pode sair sem o atributo e nenhum mixin carrega.
+    manifest {
+        attributes([
+            'MixinConfigs': 'ntranslator.mixins.json'
+        ])
+    }
+}
+
+tasks.build.dependsOn(tasks.shadowJar)
+
+publishing {
+    publications {
+        register('mavenJava', MavenPublication) {
+            artifact tasks.shadowJar
+        }
+    }
+}

@@ -1,0 +1,655 @@
+# NEXEL FSB Portuguese rules.
+
+# Locale: pt-BR
+
+#
+
+# Processing order:
+
+# 1. Full phrase replacement
+
+# 2. Context replacement
+
+# 3. Solo replacement
+
+#
+
+# Context rules replace only the asterisks.
+
+# Full and solo rules replace the complete matched pattern.
+
+# ==================================================
+
+# FULL PHRASE REPLACEMENT
+
+# ==================================================
+
+# Use when Edge censors the complete expression.
+
+***** ** **** = filha da puta
+
+# IMPORTANT:
+
+# "filha da puta" and "filho da puta" generate the same mask:
+
+# ***** ** ****
+
+#
+
+# When the complete expression is censored, FSB cannot distinguish
+
+# between "filha" and "filho" using only the number of asterisks.
+
+# ==================================================
+
+# CONTEXT REPLACEMENT
+
+# ==================================================
+
+# FILHA / FILHO DA PUTA
+
+filha da **** = puta
+filho da **** = puta
+sua filha da **** = puta
+seu filho da **** = puta
+aquela filha da **** = puta
+aquele filho da **** = puta
+é filha da **** = puta
+é filho da **** = puta
+
+# CU
+
+vai tomar no ** = cu
+vá tomar no ** = cu
+toma no ** = cu
+tomar no ** = cu
+tomou no ** = cu
+enfia no ** = cu
+enfiar no ** = cu
+no meu ** = cu
+do meu ** = cu
+seu ** = cu
+
+# FODER
+
+vai se ***** = foder
+vá se ***** = foder
+pode se ***** = foder
+vou te ***** = foder
+quer me ***** = foder
+tentou me ***** = foder
+mandei ele se ***** = foder
+mandei ela se ***** = foder
+
+# PORRA
+
+que ***** é essa = porra
+que ***** foi essa = porra
+que ***** é isso = porra
+que ***** você quer = porra
+que ***** tu quer = porra
+mas que ***** = porra
+essa ***** toda = porra
+nenhuma ***** = porra
+
+# MERDA
+
+deu ***** = merda
+vai dar ***** = merda
+fez ***** = merda
+fiz ***** = merda
+pedaço de ***** = merda
+monte de ***** = merda
+cheio de ***** = merda
+cheia de ***** = merda
+essa ***** aconteceu = merda
+essa ***** deu errado = merda
+essa ***** quebrou = merda
+
+# BOSTA
+
+essa ***** não funciona = bosta
+essa ***** aqui = bosta
+aquela ***** não funciona = bosta
+que ***** de jogo = bosta
+que ***** de servidor = bosta
+que ***** de sistema = bosta
+que ***** de mod = bosta
+ficou uma ***** = bosta
+virou uma ***** = bosta
+é uma ***** inútil = bosta
+
+# CARALHO
+
+pra ******* = caralho
+para ******* = caralho
+do ******* = caralho
+bom pra ******* = caralho
+ruim pra ******* = caralho
+longe pra ******* = caralho
+difícil pra ******* = caralho
+rápido pra ******* = caralho
+forte pra ******* = caralho
+frio pra ******* = caralho
+quente pra ******* = caralho
+é o ******* = caralho
+
+# CACETE
+
+pra ****** = cacete
+para ****** = cacete
+bom pra ****** = cacete
+longe pra ****** = cacete
+difícil pra ****** = cacete
+que ****** foi esse = cacete
+do ****** = cacete
+
+# VAGABUNDO / VAGABUNDA
+
+seu ********* = vagabundo
+esse ********* = vagabundo
+aquele ********* = vagabundo
+um ********* inútil = vagabundo
+
+sua ********* = vagabunda
+essa ********* = vagabunda
+aquela ********* = vagabunda
+uma ********* inútil = vagabunda
+
+# ARROMBADO / ARROMBADA
+
+seu ********* desgraçado = arrombado
+esse ********* mentiroso = arrombado
+aquele ********* inútil = arrombado
+
+sua ********* desgraçada = arrombada
+essa ********* mentirosa = arrombada
+aquela ********* inútil = arrombada
+
+# DESGRAÇADO / DESGRAÇADA
+
+seu ********** = desgraçado
+esse ********** = desgraçado
+aquele ********** = desgraçado
+
+sua ********** = desgraçada
+essa ********** = desgraçada
+aquela ********** = desgraçada
+
+# ESCROTO / ESCROTA
+
+seu ******* nojento = escroto
+esse ******* nojento = escroto
+aquele ******* nojento = escroto
+
+sua ******* nojenta = escrota
+essa ******* nojenta = escrota
+aquela ******* nojenta = escrota
+
+# BABACA
+
+seu ****** idiota = babaca
+esse ****** não entende = babaca
+aquele ****** mentiroso = babaca
+é um ****** completo = babaca
+
+# IMBECIL
+
+seu ******* inútil = imbecil
+esse ******* não entende = imbecil
+aquele ******* mentiroso = imbecil
+é um ******* completo = imbecil
+
+# EXPANDED CONTEXT REPLACEMENT
+
+# FULL PHRASES
+
+**** *** ***** = puta que pariu
+*** ** ***** = vai se foder
+** ** ***** = vá se foder
+*** ***** ** ** = vai tomar no cu
+** ***** ** ** = vá tomar no cu
+***** ** ** = tomar no cu
+*** ** ** = pau no cu
+****-** = foda-se
+**** ** = foda se
+*** ***** = que merda
+*** ******* = que caralho
+*** ****** = que cacete
+*** * ***** = vai à merda
+****** ** ***** = pedaço de merda
+***** ** ***** = monte de merda
+***** **** **** = filho duma puta
+**** ***** = puta merda
+**** *** * ***** = puta que o pariu
+
+# PUTA / PUTO
+
+essa **** = puta
+aquela **** = puta
+sua **** = puta
+uma **** = puta
+**** que pariu = puta
+**** merda = puta
+**** vida = puta
+**** falta de sorte = puta
+de **** nenhuma = puta
+nem **** nenhuma = puta
+uma **** ideia = puta
+uma **** bagunça = puta
+estou **** = puto
+tô **** = puto
+to **** = puto
+ficou **** = puto
+ele ficou **** = puto
+muito **** com isso = puto
+completamente **** = puto
+aquele **** = puto
+seu **** = puto
+
+# PORRA
+
+que ***** aconteceu = porra
+que ***** voce quer = porra
+onde está essa ***** = porra
+onde ta essa ***** = porra
+para com essa ***** = porra
+larga essa ***** = porra
+não entendi ***** nenhuma = porra
+nao entendi ***** nenhuma = porra
+que ***** de aplicativo = porra
+qual é a ***** do problema = porra
+qual e a ***** do problema = porra
+***** nenhuma funciona = porra
+essa ***** não abre = porra
+essa ***** nao abre = porra
+
+# MERDA
+
+deu muita ***** = merda
+essa ***** travou = merda
+essa ***** caiu = merda
+vai à ***** = merda
+vai a ***** = merda
+vá à ***** = merda
+va a ***** = merda
+manda tudo à ***** = merda
+manda tudo a ***** = merda
+come ***** = merda
+comer ***** = merda
+não vale uma ***** = merda
+nao vale uma ***** = merda
+não serve pra ***** = merda
+nao serve pra ***** = merda
+não entendo ***** nenhuma = merda
+nao entendo ***** nenhuma = merda
+essa ***** de código = merda
+essa ***** de codigo = merda
+essa ***** de máquina = merda
+essa ***** de maquina = merda
+essa ***** de computador = merda
+essa ***** de programa = merda
+
+# BOSTA
+
+essa ***** nao funciona = bosta
+aquela ***** nao funciona = bosta
+e uma ***** inutil = bosta
+um pedaço de ***** = bosta
+um monte de ***** = bosta
+cheira a ***** = bosta
+parece ***** = bosta
+
+# CARALHO
+
+dificil pra ******* = caralho
+rapido pra ******* = caralho
+e o ******* = caralho
+que ******* é esse = caralho
+que ******* e esse = caralho
+que ******* foi esse = caralho
+onde ******* você está = caralho
+onde ******* voce esta = caralho
+como ******* isso funciona = caralho
+por que ******* isso aconteceu = caralho
+quem ******* fez isso = caralho
+o que ******* aconteceu = caralho
+vai pro ******* = caralho
+vá pro ******* = caralho
+va pro ******* = caralho
+manda pro ******* = caralho
+
+# CACETE
+
+ruim pra ****** = cacete
+dificil pra ****** = cacete
+que ****** é esse = cacete
+que ****** e esse = cacete
+onde ****** está = cacete
+onde ****** esta = cacete
+como ****** funciona = cacete
+por que ****** fez isso = cacete
+vai pro ****** = cacete
+manda pro ****** = cacete
+
+# FODER / FODEU / FODIDO / FODIDA / FODENDO
+
+va se ***** = foder
+não tenta me ***** = foder
+nao tenta me ***** = foder
+isso vai ***** tudo = foder
+você vai ***** tudo = foder
+voce vai ***** tudo = foder
+para de ***** tudo = foder
+deixa de ***** tudo = foder
+não vai ***** isso = foder
+nao vai ***** isso = foder
+vai ***** o sistema = foder
+vai ***** o servidor = foder
+agora ***** = fodeu
+pronto ***** = fodeu
+acho que ***** = fodeu
+***** tudo = fodeu
+***** de vez = fodeu
+***** geral = fodeu
+se isso quebrar ***** = fodeu
+o servidor caiu ***** = fodeu
+estou ****** = fodido
+tô ****** = fodido
+to ****** = fodido
+ele está ****** = fodido
+ele esta ****** = fodido
+o servidor está ****** = fodido
+o servidor esta ****** = fodido
+o sistema está ****** = fodido
+o sistema esta ****** = fodido
+o jogo está ****** = fodido
+o jogo esta ****** = fodido
+completamente ****** = fodido
+totalmente ****** = fodido
+muito ****** = fodido
+bem ****** = fodido
+ela está ****** = fodida
+ela esta ****** = fodida
+a máquina está ****** = fodida
+a maquina esta ****** = fodida
+essa situação está ****** = fodida
+essa situacao esta ****** = fodida
+está ******* tudo = fodendo
+esta ******* tudo = fodendo
+você está ******* tudo = fodendo
+voce esta ******* tudo = fodendo
+estão ******* tudo = fodendo
+estao ******* tudo = fodendo
+para de ficar ******* = fodendo
+isso está ******* o sistema = fodendo
+isso esta ******* o sistema = fodendo
+isso é **** = foda
+isso e **** = foda
+muito **** = foda
+bom pra **** = foda
+difícil pra **** = foda
+dificil pra **** = foda
+uma coisa **** = foda
+um jogo **** = foda
+um mod **** = foda
+uma situação **** = foda
+uma situacao **** = foda
+que coisa **** = foda
+****** isso = fodase
+****** ele = fodase
+****** ela = fodase
+
+# CU
+
+va tomar no ** = cu
+no seu ** = cu
+caiu de ** = cu
+dor no ** = cu
+dedo no ** = cu
+pau no ** = cu
+vai pro ** = cu
+vá pro ** = cu
+va pro ** = cu
+
+# PAU / PICA / PIROCA / ROLA / BUCETA
+
+meu *** = pau
+seu *** = pau
+um *** enorme = pau
+esse *** = pau
+bateu o *** = pau
+deu *** = pau
+deu um *** = pau
+travou pra *** = pau
+ficou de *** duro = pau
+um *** de madeira = pau
+pega o *** = pau
+minha **** = pica
+uma **** enorme = pica
+que **** = pica
+minha ****** = piroca
+sua ****** = piroca
+essa ****** = piroca
+uma ****** enorme = piroca
+mostrou a ****** = piroca
+pegou na ****** = piroca
+mostrou a **** = rola
+pegou na **** = rola
+a ****** dela = buceta
+uma ****** = buceta
+dor na ****** = buceta
+vai pra ****** = buceta
+
+# INSULTOS COMUNS
+
+um ********* = vagabundo
+você é um ********* = vagabundo
+voce é um ********* = vagabundo
+tu é um ********* = vagabundo
+para de ser ********* = vagabundo
+para de agir como ********* = vagabundo
+não seja ********* = vagabundo
+nao seja ********* = vagabundo
+que ********* você é = vagabundo
+que ********* voce é = vagabundo
+uma ********* = vagabunda
+você é uma ********* = vagabunda
+voce é uma ********* = vagabunda
+tu é uma ********* = vagabunda
+um ********** = desgraçado
+você é um ********** = desgraçado
+voce é um ********** = desgraçado
+tu é um ********** = desgraçado
+para de ser ********** = desgraçado
+para de agir como ********** = desgraçado
+não seja ********** = desgraçado
+nao seja ********** = desgraçado
+que ********** você é = desgraçado
+que ********** voce é = desgraçado
+uma ********** = desgraçada
+você é uma ********** = desgraçada
+voce é uma ********** = desgraçada
+tu é uma ********** = desgraçada
+seu ******* = escroto
+esse ******* = escroto
+aquele ******* = escroto
+um ******* = escroto
+você é um ******* = escroto
+voce é um ******* = escroto
+tu é um ******* = escroto
+para de ser ******* = escroto
+para de agir como ******* = escroto
+não seja ******* = escroto
+nao seja ******* = escroto
+que ******* você é = escroto
+que ******* voce é = escroto
+sua ******* = escrota
+essa ******* = escrota
+aquela ******* = escrota
+uma ******* = escrota
+você é uma ******* = escrota
+voce é uma ******* = escrota
+tu é uma ******* = escrota
+seu ****** = otário
+esse ****** = otário
+aquele ****** = otário
+um ****** = otário
+você é um ****** = otário
+voce é um ****** = otário
+tu é um ****** = otário
+para de ser ****** = otário
+para de agir como ****** = otário
+não seja ****** = otário
+nao seja ****** = otário
+que ****** você é = otário
+que ****** voce é = otário
+aquela ****** = otária
+você é uma ****** = otária
+voce é uma ****** = otária
+tu é uma ****** = otária
+seu ***** = corno
+esse ***** = corno
+aquele ***** = corno
+um ***** = corno
+você é um ***** = corno
+voce é um ***** = corno
+tu é um ***** = corno
+para de ser ***** = corno
+para de agir como ***** = corno
+não seja ***** = corno
+nao seja ***** = corno
+que ***** você é = corno
+que ***** voce é = corno
+sua ***** = corna
+essa ***** = corna
+aquela ***** = corna
+uma ***** = corna
+você é uma ***** = corna
+voce é uma ***** = corna
+tu é uma ***** = corna
+esse **** = lixo
+um **** = lixo
+você é um **** = lixo
+voce é um **** = lixo
+tu é um **** = lixo
+para de ser **** = lixo
+para de agir como **** = lixo
+não seja **** = lixo
+nao seja **** = lixo
+que **** você é = lixo
+que **** voce é = lixo
+
+# SEXO / CONTEÚDO ADULTO / ANATOMIA
+
+fazer **** = sexo
+querer **** = sexo
+falando de **** = sexo
+cena de **** = sexo
+vídeo de **** = sexo
+video de **** = sexo
+conteúdo de **** = sexo
+conteudo de **** = sexo
+durante o **** = sexo
+assistir ***** = pornô
+ver ***** = pornô
+vídeo ***** = pornô
+video ***** = pornô
+site ***** = pornô
+ver *********** = pornografia
+assistir *********** = pornografia
+conteúdo de *********** = pornografia
+conteudo de *********** = pornografia
+quer ******* = transar
+vamos ******* = transar
+queria ******* = transar
+tentou ******* = transar
+foram ******* = transar
+quer ****** = trepar
+vamos ****** = trepar
+queria ****** = trepar
+tentou ****** = trepar
+vai ***** = gozar
+vou ***** = gozar
+quer ***** = gozar
+acabou de ***** = gozar
+fez ela ***** = gozar
+com ***** = tesão
+muito ***** = tesão
+sentindo ***** = tesão
+bater ******* = punheta
+fazendo ******* = punheta
+fazer *********** = masturbação
+sobre *********** = masturbação
+vídeo de *********** = masturbação
+video de *********** = masturbação
+teve ******* = orgasmo
+chegou ao ******* = orgasmo
+durante o ******* = orgasmo
+mancha de ***** = sêmen
+cheio de ******* = esperma
+com ******* = esperma
+mancha de ******* = esperma
+ficou ****** = pelado
+estava ****** = pelado
+apareceu ****** = pelado
+cena de ***** = nudez
+conteúdo com ***** = nudez
+conteudo com ***** = nudez
+mandar ***** = nudes
+enviar ***** = nudes
+recebeu ***** = nudes
+vazaram ***** = nudes
+mostrou os ****** = peitos
+dor nos ****** = peitos
+tocou nos ****** = peitos
+mostrou as ***** = tetas
+tocou nas ***** = tetas
+as ***** dela = tetas
+o ***** dele = pênis
+dor no ***** = pênis
+mostrou o ***** = pênis
+
+# DROGAS / VIOLÊNCIA
+
+fumar ******* = maconha
+cheiro de ******* = maconha
+plantação de ******* = maconha
+plantacao de ******* = maconha
+usar ******* = cocaína
+cheirou ******* = cocaína
+tráfico de ******* = cocaína
+trafico de ******* = cocaína
+usar ***** = crack
+pedra de ***** = crack
+viciado em ***** = crack
+vender ***** = droga
+comprar ***** = droga
+tentou ***** = matar
+ameaçou ***** = matar
+ameacou ***** = matar
+no jogo vai ***** = matar
+ameaça de ***** = morte
+ameaca de ***** = morte
+causou a ***** = morte
+risco de ***** = morte
+o ********* fugiu = assassino
+caso de ******* = estupro
+acusação de ******* = estupro
+acusacao de ******* = estupro
+vítima de ******* = estupro
+vitima de ******* = estupro
+
+# SOLO REPLACEMENT
+
+# Lowest priority fallbacks.
+
+** = cu
+*** = pau
+**** = puta
+***** = porra
+****** = cacete
+******* = caralho
+********* = vagabunda
+********** = desgraçada
+*********** = pornografia

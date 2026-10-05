@@ -1,0 +1,15 @@
+package com.arthou.ntranslator.transcript
+
+import net.minecraft.world.entity.player.Player
+import com.arthou.ntranslator.Language
+
+data class Transcript(
+    val index: Int,
+    val player: Player,
+    var text: String,
+    val language: Language,
+    var lastUpdateTime: Long,
+    var incomplete: Boolean,
+
+    var arrivalTime: Long = System.currentTimeMillis()
+)

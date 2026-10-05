@@ -1,0 +1,631 @@
+# NEXEL FSB English rules.
+
+# Locales: en-US / en-GB
+
+#
+
+# Processing order:
+
+# 1. Full phrase replacement
+
+# 2. Context replacement
+
+# 3. Solo replacement
+
+#
+
+# Context rules replace only the asterisks.
+
+# Full and solo rules replace the complete matched pattern.
+
+# ==================================================
+
+# FULL PHRASE REPLACEMENT
+
+# ==================================================
+
+# Use when Edge censors the complete expression.
+
+*** ** * ***** = son of a bitch
+**** *** = fuck you
+
+# ==================================================
+
+# CONTEXT REPLACEMENT
+
+# ==================================================
+
+# FUCK
+
+**** you = fuck
+**** off = fuck
+**** this = fuck
+**** that = fuck
+**** me = fuck
+**** him = fuck
+**** her = fuck
+**** them = fuck
+
+what the **** = fuck
+what the **** is this = fuck
+what the **** is that = fuck
+what the **** happened = fuck
+what the **** are you doing = fuck
+what the **** are you saying = fuck
+what the **** do you want = fuck
+
+shut the **** up = fuck
+get the **** out = fuck
+get the **** away = fuck
+get the **** off = fuck
+
+go **** yourself = fuck
+you can **** yourself = fuck
+
+do not **** with me = fuck
+don't **** with me = fuck
+never **** with me = fuck
+
+I do not give a **** = fuck
+I don't give a **** = fuck
+who gives a **** = fuck
+nobody gives a **** = fuck
+
+# SHIT
+
+oh **** = shit
+holy **** = shit
+no **** = shit
+
+piece of **** = shit
+a piece of **** = shit
+you piece of **** = shit
+
+full of **** = shit
+you are full of **** = shit
+you're full of **** = shit
+
+eat **** = shit
+this **** = shit
+that **** = shit
+same **** = shit
+some **** = shit
+random **** = shit
+
+this **** again = shit
+not this **** again = shit
+I hate this **** = shit
+fix this **** = shit
+clean this **** = shit
+
+**** happens = shit
+**** happened = shit
+
+# DAMN
+
+god **** it = damn
+god **** this = damn
+**** right = damn
+**** good = damn
+**** bad = damn
+**** close = damn
+**** near = damn
+
+that **** thing = damn
+this **** thing = damn
+the **** thing = damn
+
+# PISS
+
+**** off already = piss
+**** off then = piss
+**** off mate = piss
+
+taking the **** = piss
+take the **** = piss
+
+# DICK
+
+you are a **** = dick
+you're a **** = dick
+being a **** = dick
+such a **** = dick
+do not be a **** = dick
+don't be a **** = dick
+
+# BITCH
+
+son of a ***** = bitch
+you son of a ***** = bitch
+that son of a ***** = bitch
+
+what a ***** = bitch
+such a ***** = bitch
+stop being a ***** = bitch
+do not be a ***** = bitch
+don't be a ***** = bitch
+
+***** please = bitch
+***** about it = bitch
+***** and complain = bitch
+
+# PRICK
+
+you little ***** = prick
+such a little ***** = prick
+being a ***** again = prick
+
+# FUCKED
+
+we are ****** = fucked
+we're ****** = fucked
+I am ****** = fucked
+I'm ****** = fucked
+
+you are ****** now = fucked
+you're ****** now = fucked
+completely ****** = fucked
+totally ****** = fucked
+
+this is ****** = fucked
+everything is ****** = fucked
+the server is ****** = fucked
+the system is ****** = fucked
+the game is ****** = fucked
+
+# PISSED
+
+****** off = pissed
+I am ****** off = pissed
+I'm ****** off = pissed
+you look ****** off = pissed
+they are ****** off = pissed
+
+# FUCKING
+
+******* hell = fucking
+******* idiot = fucking
+******* stupid = fucking
+******* useless = fucking
+******* amazing = fucking
+******* awesome = fucking
+******* terrible = fucking
+******* horrible = fucking
+******* ridiculous = fucking
+******* annoying = fucking
+******* server = fucking
+******* system = fucking
+******* game = fucking
+******* mod = fucking
+******* machine = fucking
+******* thing = fucking
+
+# ASSHOLE
+
+you ******* = asshole
+an ******* = asshole
+such an ******* = asshole
+what an ******* = asshole
+being an ******* = asshole
+do not be an ******* = asshole
+don't be an ******* = asshole
+
+# BASTARD
+
+you little ******* = bastard
+that little ******* = bastard
+lucky ******* = bastard
+poor ******* = bastard
+
+# DUMBASS
+
+you absolute ******* = dumbass
+such a ******* move = dumbass
+that was a ******* move = dumbass
+
+# JACKASS
+
+acting like a ******* = jackass
+stop being a ******* = jackass
+do not act like a ******* = jackass
+
+# BULLSHIT
+
+that is ******** = bullshit
+that's ******** = bullshit
+this is ******** = bullshit
+
+complete ******** = bullshit
+absolute ******** = bullshit
+total ******** = bullshit
+pure ******** = bullshit
+
+talking ******** = bullshit
+stop talking ******** = bullshit
+calling ******** = bullshit
+don't give me that ******** = bullshit
+
+# DICKHEAD
+
+you complete ******** = dickhead
+such a ******** person = dickhead
+being a ******** again = dickhead
+
+# SHITHEAD
+
+you little ******** = shithead
+that ******** again = shithead
+the same ******** again = shithead
+
+# MOTHERFUCKER
+
+you ************ = motherfucker
+that ************ = motherfucker
+this ************ = motherfucker
+crazy ************ = motherfucker
+
+# MOTHERFUCKING
+
+************* idiot = motherfucking
+************* machine = motherfucking
+************* server = motherfucking
+************* system = motherfucking
+************* game = motherfucking
+************* thing = motherfucking
+
+# EXPANDED CONTEXT REPLACEMENT
+
+# FULL PHRASES
+
+** **** ******** = go fuck yourself
+**** *** **** ** = shut the fuck up
+**** *** **** = what the fuck
+***** ** **** = piece of shit
+**** **** = holy shit
+** ******* *** = no fucking way
+****** ******* = mother fucking
+************* ***** = motherfucking idiot
+** ** **** = go to hell
+**** ** *** *** = pain in the ass
+**** ***** ** **** = dumb piece of shit
+*** *** ** ******* = you are an asshole
+*** *** * ***** = you are a bitch
+*** ****** ******* = you little bastard
+
+# FUCK / FUCKING / FUCKED / FUCKER
+
+where the **** are you = fuck
+who the **** are you = fuck
+how the **** does this work = fuck
+why the **** did you do that = fuck
+this will **** everything = fuck
+you will **** everything = fuck
+stop trying to **** this up = fuck
+do not **** this up = fuck
+don't **** this up = fuck
+why did you **** it up = fuck
+******* computer = fucking
+******* program = fucking
+******* app = fucking
+******* problem = fucking
+******* error = fucking
+******* code = fucking
+******* lag = fucking
+******* broken = fucking
+so ******* good = fucking
+so ******* bad = fucking
+this ******* thing = fucking
+that ******* thing = fucking
+the app is ****** = fucked
+the computer is ****** = fucked
+the machine is ****** = fucked
+that got ****** = fucked
+it is ****** = fucked
+it's ****** = fucked
+we got ****** = fucked
+you ****** = fucker
+that ****** = fucker
+this ****** = fucker
+little ****** = fucker
+stupid ****** = fucker
+crazy ****** = fucker
+lucky ****** = fucker
+poor ****** = fucker
+those ******* = fuckers
+these ******* = fuckers
+all those ******* = fuckers
+you ******** = fuckhead
+that ******** = fuckhead
+stupid ******** = fuckhead
+little ******** = fuckhead
+that ******* = fuckwit
+absolute ******* = fuckwit
+complete ******* = fuckwit
+
+# SHIT / SHITTY / SHITHEAD / BULLSHIT
+
+what is this **** = shit
+this **** is broken = shit
+this **** does not work = shit
+this **** doesn't work = shit
+that **** failed = shit
+the server is **** = shit
+the game is **** = shit
+the code is **** = shit
+smells like **** = shit
+this ****** game = shitty
+that ****** server = shitty
+a ****** system = shitty
+a ****** app = shitty
+this ****** code = shitty
+that ****** mod = shitty
+such a ****** day = shitty
+a ****** computer = shitty
+this is a ******** = shitshow
+what a ******** = shitshow
+this ******** again = bullshit
+more ******** = bullshit
+that sounds like ******** = bullshit
+what a load of ******** = bullshit
+that is ********* = horseshit
+complete ********* = horseshit
+pure ********* = horseshit
+completely ******* = batshit
+totally ******* = batshit
+went ******* crazy = batshit
+
+# DAMN / GODDAMN / HELL / CRAP
+
+**** it all = damn
+**** this game = damn
+this ******* mess = goddamn
+where the **** = hell
+who the **** = hell
+how the **** = hell
+why the **** = hell
+go to **** = hell
+**** no = hell
+**** yes = hell
+that **** is broken = crap
+load of **** = crap
+
+# PISS / PISSED
+
+do not **** me off = piss
+don't **** me off = piss
+you **** me off = piss
+this will **** him off = piss
+this will **** her off = piss
+he is ****** off = pissed
+she is ****** off = pissed
+really ****** = pissed
+so ****** right now = pissed
+
+# COMMON INSULTS
+
+you are an ******* = asshole
+you're an ******* = asshole
+stop being an ******* = asshole
+that ******* again = asshole
+this ******* again = asshole
+you are an ******** = arsehole
+you're an ******** = arsehole
+what an ******** = arsehole
+such an ******** = arsehole
+being an ******** = arsehole
+do not be an ******** = arsehole
+don't be an ******** = arsehole
+stop being an ******** = arsehole
+you are a ******* = bastard
+you're a ******* = bastard
+what a ******* = bastard
+such a ******* = bastard
+being a ******* = bastard
+do not be a ******* = bastard
+don't be a ******* = bastard
+you ***** = bitch
+you are a ***** = bitch
+you're a ***** = bitch
+being a ***** = bitch
+that ***** again = bitch
+this ***** again = bitch
+you are a ******** = dickhead
+you're a ******** = dickhead
+such a ******** = dickhead
+being a ******** = dickhead
+do not be a ******** = dickhead
+don't be a ******** = dickhead
+stop being a ******** = dickhead
+you are an ***** = idiot
+you're an ***** = idiot
+what an ***** = idiot
+such an ***** = idiot
+being an ***** = idiot
+do not be an ***** = idiot
+don't be an ***** = idiot
+stop being an ***** = idiot
+you are a ****** = wanker
+you're a ****** = wanker
+what a ****** = wanker
+such a ****** = wanker
+being a ****** = wanker
+do not be a ****** = wanker
+don't be a ****** = wanker
+stop being a ****** = wanker
+that ****** again = wanker
+this ****** again = wanker
+you **** = twat
+what a **** = twat
+stop being a **** = twat
+that **** again = twat
+you *** = hoe
+you are a *** = hoe
+you're a *** = hoe
+what a *** = hoe
+such a *** = hoe
+being a *** = hoe
+do not be a *** = hoe
+don't be a *** = hoe
+stop being a *** = hoe
+that *** again = hoe
+this *** again = hoe
+
+# DICK / COCK / PUSSY / ASS / BALLS
+
+his **** = dick
+your **** = dick
+my **** = dick
+big **** = dick
+small **** = dick
+suck my **** = dick
+showed his **** = cock
+the **** crowed = cock
+her ***** = pussy
+your ***** = pussy
+my ***** = pussy
+wet ***** = pussy
+the ***** cat = pussy
+my *** = ass
+your *** = ass
+his *** = ass
+her *** = ass
+kick your *** = ass
+pain in the *** = ass
+get your *** here = ass
+move your *** = ass
+lazy *** = ass
+dumb *** = ass
+bad *** = ass
+smart *** = ass
+fat *** = ass
+her **** = arse
+kick your **** = arse
+pain in the **** = arse
+get your **** here = arse
+his ***** = balls
+big ***** = balls
+grow some ***** = balls
+kick in the ***** = balls
+pain in the ***** = balls
+kick in the **** = nuts
+that is **** = nuts
+that's **** = nuts
+you are **** = nuts
+showed her **** = tits
+showed her ***** = boobs
+showed his ***** = penis
+her ****** = vagina
+your ****** = vagina
+the ****** = vagina
+pain in the ****** = vagina
+
+# SEXUAL CONTENT
+
+have *** = sex
+having *** = sex
+want *** = sex
+talking about *** = sex
+*** scene = sex
+during *** = sex
+watch **** = porn
+watching **** = porn
+**** site = porn
+**** video = porn
+free **** = porn
+watch ***** = porno
+***** site = porno
+***** video = porno
+watch *********** = pornography
+*********** site = pornography
+*********** video = pornography
+adult *********** = pornography
+completely ***** = naked
+got ***** = naked
+was ***** = naked
+appeared ***** = naked
+completely **** = nude
+got **** = nude
+was **** = nude
+**** photo = nude
+send ***** = nudes
+sent ***** = nudes
+leaked ***** = nudes
+received ***** = nudes
+feeling ***** = horny
+so ***** = horny
+really ***** = horny
+had an ****** = orgasm
+reached ****** = orgasm
+during the ****** = orgasm
+going to *** = cum
+about to *** = cum
+made him *** = cum
+made her *** = cum
+covered in ***** = semen
+with ***** = semen
+stain of ***** = semen
+want to ********** = masturbate
+trying to ********** = masturbate
+started to ********** = masturbate
+about ************ = masturbation
+video of ************ = masturbation
+during ************ = masturbation
+gave a ******* = blowjob
+want a ******* = blowjob
+asked for a ******* = blowjob
+
+# DRUGS / VIOLENCE
+
+smoke **** = weed
+smoking **** = weed
+bag of **** = weed
+grow **** = weed
+garden **** = weed
+smoke ********* = marijuana
+bag of ********* = marijuana
+grow ********* = marijuana
+use ******* = cocaine
+snort ******* = cocaine
+bag of ******* = cocaine
+selling ******* = cocaine
+use ****** = heroin
+inject ****** = heroin
+selling ****** = heroin
+use **** = meth
+making **** = meth
+very ***** = drunk
+too ***** = drunk
+very **** = high
+too **** = high
+feeling **** = high
+**** up there = high
+going to **** = kill
+want to **** = kill
+tried to **** = kill
+in the game **** = kill
+**** the process = kill
+charged with ****** = murder
+case of ****** = murder
+attempted ****** = murder
+the ****** escaped = killer
+a serial ****** = killer
+case of **** = rape
+accused of **** = rape
+victim of **** = rape
+reported **** = rape
+
+# SOLO REPLACEMENT
+
+# Lowest priority fallbacks.
+
+*** = ass
+**** = fuck
+***** = bitch
+****** = fucked
+******* = asshole
+******** = bullshit
+********* = horseshit
+********** = masturbate
+*********** = pornography
+************ = motherfucker
+************* = motherfucking

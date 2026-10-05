@@ -1,0 +1,815 @@
+# NEXEL FSB Spanish rules.
+
+# Locales: es-ES / es-MX / Latin America
+
+#
+
+# Processing order:
+
+# 1. Full phrase replacement
+
+# 2. Context replacement
+
+# 3. Solo replacement
+
+#
+
+# Context rules replace only the asterisks.
+
+# Full and solo rules replace the complete matched pattern.
+
+# ==================================================
+
+# FULL PHRASE REPLACEMENT
+
+# ==================================================
+
+# Use when Edge censors the complete expression.
+
+**** ** **** = hijo de puta
+
+# IMPORTANT:
+
+# "hijo de puta" and "hija de puta" generate the same mask:
+
+# **** ** ****
+
+#
+
+# When the complete expression is censored, FSB cannot distinguish
+
+# between "hijo" and "hija" using only the number of asterisks.
+
+# ==================================================
+
+# COMMON CONTEXT REPLACEMENT
+
+# ==================================================
+
+# PUTA
+
+hijo de **** = puta
+hija de **** = puta
+ese hijo de **** = puta
+esa hija de **** = puta
+eres un hijo de **** = puta
+eres una hija de **** = puta
+
+la **** madre = puta
+de **** madre = puta
+ni **** idea = puta
+no tengo ni **** idea = puta
+una **** mierda = puta
+qué **** mierda = puta
+esta **** mierda = puta
+esa **** mierda = puta
+
+me cago en la **** = puta
+me cago en tu **** madre = puta
+
+# PERRA
+
+hijo de ***** = perra
+hija de ***** = perra
+ese hijo de ***** = perra
+esa hija de ***** = perra
+maldito hijo de ***** = perra
+maldita hija de ***** = perra
+
+# MIERDA
+
+vete a la ****** = mierda
+váyase a la ****** = mierda
+váyanse a la ****** = mierda
+se fue a la ****** = mierda
+manda todo a la ****** = mierda
+
+come ****** = mierda
+comer ****** = mierda
+vete a comer ****** = mierda
+
+pedazo de ****** = mierda
+un pedazo de ****** = mierda
+eres un pedazo de ****** = mierda
+
+lleno de ****** = mierda
+llena de ****** = mierda
+está lleno de ****** = mierda
+está llena de ****** = mierda
+
+esta ****** no sirve = mierda
+esa ****** no sirve = mierda
+esta ****** no funciona = mierda
+esa ****** no funciona = mierda
+
+qué ****** es esto = mierda
+qué ****** es esa = mierda
+qué ****** pasó = mierda
+qué ****** está pasando = mierda
+qué ****** estás haciendo = mierda
+qué ****** estás diciendo = mierda
+qué ****** quieres = mierda
+
+vaya ****** = mierda
+menuda ****** = mierda
+tremenda ****** = mierda
+
+una ****** de juego = mierda
+una ****** de servidor = mierda
+una ****** de sistema = mierda
+una ****** de aplicación = mierda
+una ****** de mod = mierda
+
+me importa una ****** = mierda
+no me importa una ****** = mierda
+no entiendo una ****** = mierda
+no sirve para una ****** = mierda
+no vale una ****** = mierda
+
+# CABRÓN
+
+eres un ****** de mierda = cabrón
+ese ****** de mierda = cabrón
+maldito ****** de mierda = cabrón
+qué ****** eres = cabrón
+menudo ****** eres = cabrón
+ese ****** mentiroso = cabrón
+ese ****** tramposo = cabrón
+
+# CABRONA
+
+eres una ******* de mierda = cabrona
+esa ******* de mierda = cabrona
+maldita ******* de mierda = cabrona
+qué ******* eres = cabrona
+esa ******* mentirosa = cabrona
+esa ******* tramposa = cabrona
+
+# CAGAR / CAGADO / CAGADA
+
+deja de ***** todo = cagar
+me voy a ***** encima = cagar
+
+la has ****** = cagado
+la hemos ****** = cagado
+la han ****** = cagado
+lo has ****** todo = cagado
+hemos ****** todo = cagado
+
+menuda ****** cometiste = cagada
+tremenda ****** cometiste = cagada
+esta ****** de código = cagada
+esa ****** de sistema = cagada
+
+me estoy ******* = cagando
+se está ******* = cagando
+estás ******* fuera = cagando
+
+# ==================================================
+
+# SPAIN SPANISH CONTEXT — es-ES
+
+# ==================================================
+
+# COÑO
+
+pero qué **** = coño
+qué **** haces = coño
+qué **** quieres = coño
+qué **** estás haciendo = coño
+qué **** estás diciendo = coño
+qué **** es eso = coño
+qué **** es esto = coño
+
+dónde **** estás = coño
+dónde **** está = coño
+dónde **** vamos = coño
+
+quién **** eres = coño
+quién **** hizo eso = coño
+
+cómo **** funciona = coño
+cómo **** lo hiciste = coño
+
+cuándo **** pasó = coño
+por qué **** hiciste eso = coño
+de qué **** hablas = coño
+
+# JODER / JODAS
+
+deja de ***** = joder
+vete a ***** = joder
+me vas a ***** = joder
+nos van a ***** = joder
+
+no ***** = jodas
+no me ***** = jodas
+no nos ***** = jodas
+no le ***** = jodas
+no te ***** = jodas
+
+que te ***** = jodan
+que os ***** = jodan
+que se ***** = jodan
+
+***** tío = joder
+***** otra vez = joder
+***** qué susto = joder
+***** qué desastre = joder
+
+# JODIDO / JODIDA
+
+estoy ****** = jodido
+estás ****** = jodido
+está ****** = jodido
+estamos ******* = jodidos
+
+estoy bien ****** = jodido
+estás muy ****** = jodido
+esto está ****** = jodido
+todo está ****** = jodido
+el servidor está ****** = jodido
+el sistema está ****** = jodido
+el juego está ****** = jodido
+
+está toda ****** = jodida
+quedó toda ****** = jodida
+ella está ****** = jodida
+
+# JODIENDO
+
+me estás ******** = jodiendo
+nos estás ******** = jodiendo
+estás ******** otra vez = jodiendo
+deja de estar ******** = jodiendo
+para de estar ******** = jodiendo
+
+# COJONES
+
+pero qué ******* = cojones
+qué ******* haces = cojones
+qué ******* quieres = cojones
+qué ******* estás haciendo = cojones
+qué ******* estás diciendo = cojones
+qué ******* es esto = cojones
+
+dónde ******* estás = cojones
+quién ******* eres = cojones
+cómo ******* funciona = cojones
+por qué ******* hiciste eso = cojones
+
+manda ******* = cojones
+tiene ******* = cojones
+hay que tener ******* = cojones
+con dos ******* = cojones
+
+# HOSTIA
+
+esto es la ****** = hostia
+es la ****** = hostia
+fue la ****** = hostia
+de la ****** = hostia
+está de la ****** = hostia
+quedó de la ****** = hostia
+
+una ****** enorme = hostia
+menuda ****** se dio = hostia
+te voy a dar una ****** = hostia
+
+****** tío = hostia
+****** qué susto = hostia
+****** qué golpe = hostia
+
+# GILIPOLLAS
+
+pedazo de ********** = gilipollas
+menudo ********** = gilipollas
+eres un ********** completo = gilipollas
+ese ********** otra vez = gilipollas
+no seas ********** = gilipollas
+deja de ser ********** = gilipollas
+qué ********** eres = gilipollas
+
+# CAPULLO
+
+menudo ******* estás hecho = capullo
+eres un ******* completo = capullo
+pedazo de ******* = capullo
+no seas tan ******* = capullo
+deja de ser un ******* = capullo
+
+# ==================================================
+
+# MEXICAN / LATIN AMERICAN CONTEXT — es-MX
+
+# ==================================================
+
+# VERGA
+
+a la ***** = verga
+vete a la ***** = verga
+váyanse a la ***** = verga
+
+me vale ***** = verga
+me vale la ***** = verga
+
+qué ***** es esto = verga
+qué ***** es eso = verga
+qué ***** quieres = verga
+qué ***** estás haciendo = verga
+qué ***** estás diciendo = verga
+
+de la ***** = verga
+está de la ***** = verga
+quedó de la ***** = verga
+se fue a la ***** = verga
+
+ni de ***** = verga
+no entiendo ni ***** = verga
+
+# MAMES
+
+no ***** güey = mames
+no ***** wey = mames
+no ***** otra vez = mames
+no ***** con eso = mames
+no ***** conmigo = mames
+no ***** qué pasó = mames
+no ***** qué miedo = mames
+
+# PINCHE
+
+****** juego = pinche
+****** servidor = pinche
+****** sistema = pinche
+****** aplicación = pinche
+****** computadora = pinche
+****** máquina = pinche
+****** mod = pinche
+****** cosa = pinche
+****** problema = pinche
+
+este ****** juego = pinche
+ese ****** servidor = pinche
+esta ****** cosa = pinche
+esa ****** máquina = pinche
+
+****** mierda = pinche
+****** idiota = pinche
+****** pendejo = pinche
+
+# CHINGA
+
+****** tu madre = chinga
+****** a tu madre = chinga
+ve y ****** tu madre = chinga
+
+# CHINGAR
+
+vete a ******* = chingar
+váyanse a ******* = chingar
+deja de ******* = chingar
+me vas a ******* = chingar
+nos vas a ******* = chingar
+te voy a ******* = chingar
+
+# CHINGUES
+
+no ******** = chingues
+no me ******** = chingues
+no nos ******** = chingues
+no te ******** = chingues
+no ******** güey = chingues
+no ******** wey = chingues
+no ******** conmigo = chingues
+
+# CHINGANDO
+
+me estás ********* otra vez = chingando
+nos estás ********* otra vez = chingando
+deja de estar ********* = chingando
+para de estar ********* = chingando
+
+# CHINGADO / CHINGADA
+
+todo está ******** = chingado
+esto está ******** = chingado
+el servidor está ******** = chingado
+el sistema está ******** = chingado
+el juego está ******** = chingado
+
+está toda ******** = chingada
+quedó toda ******** = chingada
+
+vete a la ******** = chingada
+váyanse a la ******** = chingada
+se fue a la ******** = chingada
+manda todo a la ******** = chingada
+
+está de la ******** = chingada
+quedó de la ******** = chingada
+hijo de la ******** = chingada
+
+# CHINGADOS
+
+qué ********* haces = chingados
+qué ********* quieres = chingados
+qué ********* estás haciendo = chingados
+qué ********* estás diciendo = chingados
+qué ********* es esto = chingados
+qué ********* es eso = chingados
+
+dónde ********* estás = chingados
+quién ********* eres = chingados
+cómo ********* funciona = chingados
+por qué ********* hiciste eso = chingados
+
+# PENDEJO / PENDEJA
+
+****** ******* = pinche pendejo
+****** ******* de mierda = pinche pendejo
+
+ese ******* no entiende = pendejo
+ese ******* otra vez = pendejo
+maldito ******* inútil = pendejo
+
+esa ******* no entiende = pendeja
+esa ******* otra vez = pendeja
+maldita ******* inútil = pendeja
+
+no seas tan ******* güey = pendejo
+no seas tan ******* wey = pendejo
+
+# PENDEJADA
+
+qué ********* acabas de hacer = pendejada
+esa ********* no funciona = pendejada
+esta ********* no tiene sentido = pendejada
+deja esa ********* = pendejada
+otra ********* más = pendejada
+una ********* enorme = pendejada
+
+# CHINGADERA
+
+esta ********** no funciona = chingadera
+esa ********** no sirve = chingadera
+qué ********** es esta = chingadera
+****** ********** = pinche chingadera
+
+# CULERO / CULERA
+
+****** ****** = pinche culero
+ese ****** ****** = pinche culero
+maldito ****** ****** = pinche culero
+
+esa ****** ****** = pinche culera
+maldita ****** ****** = pinche culera
+
+# MALPARIDO / MALPARIDA
+
+pedazo de ********* = malparido
+ese ********* de mierda = malparido
+maldito ********* = malparido
+
+pedazo de ********* mentirosa = malparida
+esa ********* de mierda = malparida
+maldita ********* = malparida
+
+# EXPANDED CONTEXT REPLACEMENT
+
+# FULL PHRASES
+
+**** * ** ****** = vete a la mierda
+****** * ** ****** = váyase a la mierda
+*** ** ***** = que te jodan
+**** ** ***** = hijo de perra
+** **** ** ** **** = me cago en la puta
+** **** ** ** **** ***** = me cago en tu puta madre
+****** ** ***** = chinga tu madre
+**** * ** ***** = vete a la verga
+** ***** = no mames
+****** ** ** ***** = concha de tu madre
+** ****** ** ** ***** = la concha de tu madre
+**** ** ** ******** = hijo de la chingada
+****** ** ****** = pedazo de mierda
+** **** ***** = de puta madre
+** ** **** = ni de coña
+
+# PUTA / PUTO
+
+que **** mierda = puta
+esa **** = puta
+aquella **** = puta
+una **** = puta
+**** vida = puta
+**** suerte = puta
+**** locura = puta
+**** máquina = puta
+**** maquina = puta
+ese **** = puto
+aquel **** = puto
+un **** = puto
+maldito **** = puto
+**** juego = puto
+**** servidor = puto
+**** sistema = puto
+**** problema = puto
+**** idiota = puto
+estoy **** = puto
+se puso **** = puto
+muy **** con eso = puto
+
+# MIERDA
+
+vayanse a la ****** = mierda
+esta lleno de ****** = mierda
+que ****** es esto = mierda
+que ****** paso = mierda
+una ****** de aplicacion = mierda
+esta ****** se rompió = mierda
+esta ****** se rompio = mierda
+esta ****** se cayó = mierda
+esta ****** se cayo = mierda
+esta ****** se bloqueó = mierda
+
+# JODER / JODAS / JODIDO / JODIENDO
+
+no quiero ***** esto = joder
+vas a ***** todo = joder
+esto va a ***** el sistema = joder
+***** tio = joder
+***** que susto = joder
+***** que desastre = joder
+qué ***** = joder
+que ***** = joder
+cómo ***** funciona = joder
+como ***** funciona = joder
+que todos se ***** = jodan
+estas ****** = jodido
+esta ****** = jodido
+el programa está ****** = jodido
+completamente ****** = jodido
+totalmente ****** = jodido
+esta toda ****** = jodida
+quedo toda ****** = jodida
+ella esta ****** = jodida
+la máquina está ****** = jodida
+la maquina esta ****** = jodida
+la situación está ****** = jodida
+la situacion esta ****** = jodida
+me estas ******** = jodiendo
+esto está ******** el sistema = jodiendo
+esto esta ******** el sistema = jodiendo
+
+# COÑO / COJONES / HOSTIA / CARAJO
+
+pero que **** = coño
+que **** haces = coño
+donde **** estas = coño
+qué ****** = carajo
+que ****** = carajo
+dónde ****** estás = carajo
+donde ****** estas = carajo
+vete al ****** = carajo
+manda al ****** = carajo
+al ****** con todo = carajo
+
+# MÉXICO / LATINOAMÉRICA
+
+vayanse a la ***** = verga
+mi ***** = verga
+tu ***** = verga
+esa ***** = verga
+no ***** qué locura = mames
+****** aplicacion = pinche
+****** maquina = pinche
+****** error = pinche
+****** código = pinche
+****** codigo = pinche
+la ****** = chinga
+hijo de la ****** = chinga
+vas a ******* todo = chingar
+esto va a ******* el sistema = chingar
+me estás ********* otra vez = chingando
+me estas ********* otra vez = chingando
+nos estás ********* otra vez = chingando
+deja de estar ********* = chingando
+para de estar ********* = chingando
+esto está ********* el sistema = chingando
+quedó ******** = chingado
+completamente ******** = chingado
+totalmente ******** = chingado
+que ********** es esta = chingadera
+esta ********** se rompió = chingadera
+
+# INSULTOS COMUNES
+
+eres un ****** = cabrón
+ese ****** = cabrón
+aquel ****** = cabrón
+un ****** = cabrón
+no seas ****** = cabrón
+deja de ser ****** = cabrón
+que ****** eres = cabrón
+maldito ****** = cabrón
+eres una ******* = cabrona
+esa ******* = cabrona
+aquella ******* = cabrona
+una ******* = cabrona
+no seas ******* = cabrona
+deja de ser ******* = cabrona
+que ******* eres = cabrona
+maldita ******* = cabrona
+eres un ******* = pendejo
+ese ******* = pendejo
+aquel ******* = pendejo
+un ******* = pendejo
+maldito ******* = pendejo
+eres una ****** = culera
+esa ****** = culera
+aquella ****** = culera
+una ****** = culera
+maldita ****** = culera
+eres un ***** = mamón
+ese ***** = mamón
+aquel ***** = mamón
+un ***** = mamón
+no seas ***** = mamón
+deja de ser ***** = mamón
+qué ***** eres = mamón
+que ***** eres = mamón
+maldito ***** = mamón
+pedazo de ***** = mamón
+eres un ******** = bastardo
+ese ******** = bastardo
+aquel ******** = bastardo
+un ******** = bastardo
+no seas ******** = bastardo
+deja de ser ******** = bastardo
+qué ******** eres = bastardo
+que ******** eres = bastardo
+maldito ******** = bastardo
+pedazo de ******** = bastardo
+eres una ******** = bastarda
+esa ******** = bastarda
+aquella ******** = bastarda
+una ******** = bastarda
+maldita ******** = bastarda
+eres un ********* = malparido
+ese ********* = malparido
+aquel ********* = malparido
+un ********* = malparido
+no seas ********* = malparido
+deja de ser ********* = malparido
+qué ********* eres = malparido
+que ********* eres = malparido
+eres una ********* = malparida
+esa ********* = malparida
+aquella ********* = malparida
+una ********* = malparida
+eres un ********** = gilipollas
+ese ********** = gilipollas
+aquel ********** = gilipollas
+un ********** = gilipollas
+que ********** eres = gilipollas
+maldito ********** = gilipollas
+eres un **** = weón
+no seas **** = weón
+deja de ser **** = weón
+qué **** eres = weón
+que **** eres = weón
+pedazo de **** = weón
+eres una ***** = weona
+aquella ***** = weona
+una ***** = weona
+maldita ***** = weona
+
+# REGIONAL PHRASES
+
+la ****** de tu madre = concha
+****** de tu madre = concha
+andate a la ****** = concha
+hijo de ************* = conchetumadre
+ese ************* = conchetumadre
+maldito ************* = conchetumadre
+que ****** haces = boludo
+qué ******** haces = pelotudo
+que ******** haces = pelotudo
+qué ****** haces = huevón
+
+# SEXO / CONTENIDO ADULTO / ANATOMÍA
+
+tener **** = sexo
+hacer **** = sexo
+quiero **** = sexo
+escena de **** = sexo
+durante el **** = sexo
+ver ***** = porno
+mirar ***** = porno
+video ***** = porno
+sitio ***** = porno
+***** gratis = porno
+ver *********** = pornografía
+mirar *********** = pornografía
+video de *********** = pornografía
+sitio de *********** = pornografía
+quiero ****** = follar
+vamos a ****** = follar
+intentó ****** = follar
+intento ****** = follar
+deja de ****** = follar
+quiero ***** contigo = coger
+vamos a ***** = coger
+intentó ***** conmigo = coger
+intento ***** conmigo = coger
+va a ******** = correrse
+voy a ******** = correrse
+acaba de ******** = correrse
+hizo que se ******** = correrse
+estoy ******** = cachondo
+muy ******** = cachondo
+se puso ******** = cachondo
+tuvo un ******* = orgasmo
+llegó al ******* = orgasmo
+llego al ******* = orgasmo
+durante el ******* = orgasmo
+cubierto de ***** = semen
+con ***** = semen
+mancha de ***** = semen
+completamente ******* = desnudo
+quedó ******* = desnudo
+estaba ******* = desnudo
+apareció ******* = desnudo
+mandar ***** = nudes
+enviar ***** = nudes
+filtraron ***** = nudes
+recibió ***** = nudes
+sus ***** = tetas
+tus ***** = tetas
+grandes ***** = tetas
+mostró las ***** = tetas
+mi **** = culo
+tu **** = culo
+su **** = culo
+patea el **** = culo
+dolor en el **** = culo
+mueve el **** = culo
+su ***** = polla
+gran ***** = polla
+chupa mi ***** = polla
+el **** = pene
+mostró el **** = pene
+su ****** = vagina
+tu ****** = vagina
+dolor en la ****** = vagina
+dar una ****** = mamada
+pidió una ****** = mamada
+quiere una ****** = mamada
+
+# DROGAS / VIOLENCIA
+
+fumar ********* = marihuana
+bolsa de ********* = marihuana
+cultivar ********* = marihuana
+usar ******* = cocaína
+aspirar ******* = cocaína
+vender ******* = cocaína
+bolsa de ******* = cocaína
+inyectar ******* = heroína
+usar ***** = droga
+vender ***** = droga
+comprar ***** = droga
+va a ***** = matar
+quiere ***** = matar
+intentó ***** = matar
+intento ***** = matar
+en el juego ***** = matar
+acusado de ********* = asesinato
+caso de ********* = asesinato
+intento de ********* = asesinato
+el ******* escapó = asesino
+el ******* escapo = asesino
+víctima de ********* = violación
+victima de ********* = violación
+
+# SOLO REPLACEMENT
+
+# Lowest priority fallbacks.
+
+# es-ES
+# **** = coño
+# ***** = joder
+# ****** = mierda
+# ******* = cojones
+# ******** = jodiendo
+# ********** = gilipollas
+
+# es-MX / Latin America
+# **** = puta
+# ***** = verga
+# ****** = pinche
+# ******* = pendejo
+# ******** = chingada
+# ********* = chingados
+# ********** = chingadera
+# *********** = pornografía

@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+:root {
+    --bubble-fill: #ffffff;
+    --bubble-border: #000000;
+    --bubble-text: #000000;
+    --bubble-radius: 30px;
+    --bubble-padding-y: 18px;
+    --bubble-padding-x: 24px;
+    --bubble-max-width: 680px;
+    --bubble-fade-ms: 600ms;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: #112b4c;
+    background:
+        radial-gradient(circle at 50% 18%, rgba(92, 146, 210, 0.30), transparent 34%),
+        linear-gradient(180deg, #123053 0%, #0d223c 52%, #081626 100%);
+    overflow: hidden;
+}
+
+.stage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px 88px;
+}
+
+.player-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: min(92vw, var(--bubble-max-width));
+    min-height: 340px;
+    justify-content: flex-end;
+}
+
+.bubble-stack {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 10px;
+    min-height: 1px;
+    width: min(92vw, var(--bubble-max-width));
+    pointer-events: none;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.speech-bubble {
+    position: relative;
+    width: fit-content;
+    min-width: 160px;
+    max-width: min(92vw, var(--bubble-max-width));
+    min-height: 0;
+    padding: var(--bubble-padding-y) var(--bubble-padding-x);
+    border-radius: var(--bubble-radius);
+    background: var(--bubble-fill);
+    border: 3px solid var(--bubble-border);
+    box-shadow: none;
+    image-rendering: pixelated;
+    overflow: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: max-width 120ms ease, padding 120ms ease, border-radius 120ms ease, opacity var(--bubble-fade-ms) ease, transform var(--bubble-fade-ms) ease;
+}
+
+.speech-bubble.hidden {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -16px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 14px solid var(--bubble-border);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.speech-bubble::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -9px;
+    width: 0;
+    height: 0;
+    background: transparent;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid var(--bubble-fill);
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.speech-bubble:not(:first-child)::before,
+.speech-bubble:not(:first-child)::after {
+    display: none;
+}
+
+.bubble-kicker {
+    display: none;
+}
+
+.bubble-text {
+    margin: 0;
+    min-height: 0;
+    font-size: clamp(1.25rem, 2vw, 1.85rem);
+    line-height: 1.42;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    text-align: center;
+    color: var(--bubble-text);
+    position: relative;
+    z-index: 3;
+}
+
+.player-name {
+    padding: 3px 8px 4px;
+    font-family: "Minecraft", "Minecraftia", "Unifont", "Courier New", monospace;
+    font-size: 1.08rem;
+    font-weight: 400;
+    color: #eef7ff;
+    background: rgba(0, 0, 0, 0.38);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.75);
+    line-height: 1;
+    image-rendering: pixelated;
+}
+
+.player-head {
+    width: 92px;
+    height: 92px;
+    image-rendering: pixelated;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.made-by {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    color: rgba(238, 247, 255, 0.88);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.pause-screen {
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 99;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.visible { display: flex; }
+
+.pause-screen h2 {
+    color: white;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    font-size: 5.5rem;
+    margin: 0;
+}
+
+.pause-screen p {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2rem;
+    margin: 0;
+}
+
+@media (max-width: 720px) {
+    .player-head { width: 82px; height: 82px; }
+}
